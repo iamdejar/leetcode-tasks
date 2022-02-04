@@ -1,6 +1,6 @@
 import { twoSum } from './scripts/two-sum.js';
-// import './scripts/palindrome';
-// import './scripts/roman-to-integer';
+import { isPalindrome } from './scripts/palindrome.js';
+import { romanToInt } from './scripts/roman-to-integer.js';
 
 const sumArrayInput = document.querySelector('[data-sum-array]');
 const sumTargetInput = document.querySelector('[data-sum-target]');
@@ -17,4 +17,5 @@ sumButton.addEventListener('click', () => {
 
   document.querySelector('.two-sum__answer').innerHTML = String(twoSum(sumArray, sumTarget));
 })
+
 

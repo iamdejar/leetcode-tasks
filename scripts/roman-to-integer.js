@@ -1,9 +1,4 @@
-/**
- * @param {string} s
- * @return {number}
- */
-
-var romanToInt = function(s) {
+export function romanToInt(s) {
     
   const romans = {
     I: 1,
