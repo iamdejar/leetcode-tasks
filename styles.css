@@ -9,13 +9,13 @@ body {
 }
 
 .section {
-  margin: 160px 0;
+  margin: 120px 0;
 }
 
-.two-sum__answer {
+.result {
   margin: 20px 0;
   padding: 5px;
   height: 15px;
-  width: 378px;
+  width: 182px;
   border: 1px solid black;
 }
