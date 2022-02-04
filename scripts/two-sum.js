@@ -1,10 +1,4 @@
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
-*/
-
-var twoSum = function(nums, target) {
+export function twoSum(nums, target) {
 	const numsClone = [];
 	for (let item in nums) {
 		numsClone[item] = nums[item]

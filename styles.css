@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.section {
+  margin: 160px 0;
+}
+
+.two-sum__answer {
+  margin: 20px 0;
+  padding: 5px;
+  height: 15px;
+  width: 378px;
+  border: 1px solid black;
+}
