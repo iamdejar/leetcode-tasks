@@ -1,7 +1,7 @@
 import { twoSum } from './scripts/two-sum.js';
 import { isPalindrome } from './scripts/palindrome.js';
 import { romanToInt } from './scripts/roman-to-integer.js';
-
+import { intToRoman } from './scripts/integer-to-roman.js';
 
 const sumArrayInput = document.querySelector('[data-sum-array]');
 const sumTargetInput = document.querySelector('[data-sum-target]');
@@ -36,5 +36,15 @@ const romansBtn = document.querySelector('[data-romans-btn]');
 romansBtn.addEventListener('click', () => {
 
   document.querySelector('[data-romans-result]').innerHTML = romanToInt(romansInput.value);
+
+});
+
+
+const integerInput = document.querySelector('[data-integer-input]');
+const integerBtn = document.querySelector('[data-integer-btn]');
+
+integerBtn.addEventListener('click', () => {
+  
+  document.querySelector('[data-integer-result]').innerHTML = intToRoman(integerInput.value);
 
 });
