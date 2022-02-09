@@ -19,3 +19,42 @@ body {
   width: 182px;
   border: 1px solid black;
 }
+
+.spoiler {
+  width: 50%;
+}
+
+.spoiler--active .spoiler__drop {
+  height: auto;
+  opacity: 1;
+  padding-top: 15px;
+}
+
+.spoiler--active .spoiler__drop code {
+  opacity: 1;
+}
+
+.spoiler__button {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.spoiler__drop {
+  margin-top: -5px;
+  padding: 0 10px 10px;
+  border: 1px solid #000;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  background-color: #ebebeb17;
+
+  height: 0;
+  opacity: 0;
+  transition: .5s;
+}
+
+.spoiler__drop code {
+  opacity: 0;
+}

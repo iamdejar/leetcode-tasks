@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +20,52 @@
       <input type="text" data-sum-target="">
       <button data-sum-btn="">Найти</button>
       <div class="result" data-sum-result=""></div>
+
+      <div class="spoiler">
+        <div class="spoiler__button">Посмотреть код</div>
+        <div class="spoiler__drop">
+          <code>
+            var twoSum = function(nums, target) {<br>
+              <br>
+
+              &nbsp;const numsClone = [];<br>
+              <br>
+              &nbsp;for (let item in nums) {<br>
+              &nbsp;&nbsp;numsClone[item] = nums[item]<br>
+              &nbsp;}<br>
+              <br>
+
+              &nbsp;let currNums;<br>
+              <br>
+
+              &nbsp;outer: for (let i=0; i < numsClone.length; i++) {<br>
+                <br>
+              &nbsp;&nbsp;for (let x=1; x < numsClone.length; x++) {<br>
+                <br>
+              &nbsp;&nbsp;&nbsp;let sum = numsClone[0] + numsClone[x];<br>
+                <br>
+              &nbsp;&nbsp;&nbsp;if (sum === target) {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;currNums = [numsClone[0], numsClone[x]];<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;break outer;<br>
+              &nbsp;&nbsp;&nbsp;}<br>
+              &nbsp;&nbsp;};<br>
+
+              <br>
+
+                &nbsp;&nbsp;numsClone.push(numsClone[0]);<br>
+                &nbsp;&nbsp;numsClone.splice(0, 1);<br>
+                &nbsp;};<br>
+
+              <br>
+              
+              &nbsp;let indexNums = [nums.indexOf(currNums[0]), nums.lastIndexOf(currNums[1])];<br>
+              <br>
+              &nbsp;return indexNums;<br>
+            }
+          </code>
+        </div>
+      </div>
+
     </section>
 
     <section class="section palindrome">
@@ -29,6 +75,23 @@
       <input type="text" data-palindrome-input="">
       <button data-palindrome-btn="">Проверить</button>
       <div class="result" data-palindrome-result=""></div>
+
+      <div class="spoiler">
+        <div class="spoiler__button">Посмотреть код</div>
+        <div class="spoiler__drop">
+          <code>
+            var isPalindrome = function(x) {<br>
+              <br>
+              &nbsp;let mass = String(x).split('');<br>
+              &nbsp;let massReverse = mass.reverse();<br>
+              &nbsp;let xReverse = massReverse.join('');<br>
+              <br>
+              &nbsp;return x === Number(xReverse);<br>
+              <br>
+            };  
+          </code>
+        </div>
+      </div>
     </section>
 
     <section class="section integer-romans">
@@ -37,6 +100,71 @@
       <input type="text" data-integer-input="">
       <button data-integer-btn="">Гоу</button>
       <div class="result" data-integer-result=""></div>
+
+      <div class="spoiler">
+        <div class="spoiler__button">Посмотреть код</div>
+        <div class="spoiler__drop">
+          <code>
+            var intToRoman = function(num) {<br>
+              <br>
+              &nbsp;let inpMass = String(num).split("");<br>
+              <br>
+              &nbsp;switch (inpMass.length) {<br>
+                &nbsp;&nbsp;case 1:<br>
+                &nbsp;&nbsp;&nbsp;return convert("I", "V", "X", 0);<br>
+                  <br>
+                  &nbsp;&nbsp;case 2:<br>
+                  &nbsp;&nbsp;&nbsp;return convert("X", "L", "C", 0) + convert("I", "V", "X", 1);<br>
+                  <br>
+                  &nbsp;&nbsp;case 3:<br>
+                  &nbsp;&nbsp;&nbsp;return (<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;convert("C", "D", "M", 0) +<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;convert("X", "L", "C", 1) +<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;convert("I", "V", "X", 2)<br>
+                  &nbsp;&nbsp;&nbsp;);<br>
+                  <br>
+                case 4:<br>
+                  let number = [];<br>
+                  for (let x = 0; x < Number(inpMass[0]); x++) {<br>
+                    number.push("M");<br>
+                  }<br>
+                  return (<br>
+                    number.join("") +<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;convert("C", "D", "M", 1) +<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;convert("X", "L", "C", 2) +<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;convert("I", "V", "X", 3)<br>
+                  );<br>
+              }<br>
+              <br>
+              function convert(firstNum, middleNum, lastNum, indx) {<br>
+                if (inpMass[indx] - 5 === 0) {<br>
+                  return middleNum;<br>
+                } else if (inpMass[indx] - 5 > 0) {<br>
+                  if (inpMass[indx] - 5 === 4) return firstNum + lastNum;<br>
+                  <br>
+                  let result = [middleNum];<br>
+                  <br>
+                  for (let i = 0; i < inpMass[indx] - 5; i++) {<br>
+                    result.push(firstNum);<br>
+                  }<br>
+                  <br>
+                  return result.join("");<br>
+                } else if (inpMass[indx] - 5 < 0) {<br>
+                  if ((inpMass[indx] - 5) * -1 === 1) return firstNum + middleNum;<br>
+                  <br>
+                  let result = [];<br>
+                  <br>
+                  &nbsp;&nbsp;&nbsp;for (let i = 0; i < Number(inpMass[indx]); i++) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;result.push(firstNum);<br>
+                  &nbsp;&nbsp;&nbsp;}<br>
+
+                  &nbsp;&nbsp;&nbsp;return result.join("");<br>
+                  &nbsp;&nbsp;}<br>
+              &nbsp;}<br>
+            }
+          </code>
+        </div>
+      </div>
     </section>
 
     <section class="section romans">
@@ -45,6 +173,23 @@
       <input type="text" data-romans-input="">
       <button data-romans-btn="">Гоу</button>
       <div class="result" data-romans-result=""></div>
+
+      <div class="spoiler">
+        <div class="spoiler__button">Посмотреть код</div>
+        <div class="spoiler__drop">
+          <code>
+            var isPalindrome = function(x) {<br>
+              <br>
+              &nbsp;let mass = String(x).split('');<br>
+              &nbsp;let massReverse = mass.reverse();<br>
+              &nbsp;let xReverse = massReverse.join('');<br>
+              <br>
+              &nbsp;return x === Number(xReverse);<br>
+              <br>
+            };  
+          </code>
+        </div>
+      </div>
     </section>
 
   </div>

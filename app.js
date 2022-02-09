@@ -3,6 +3,18 @@ import { isPalindrome } from './scripts/palindrome.js';
 import { romanToInt } from './scripts/roman-to-integer.js';
 import { intToRoman } from './scripts/integer-to-roman.js';
 
+
+// spoiler
+
+document.querySelectorAll('.spoiler__button').forEach((item) => {
+  item.addEventListener('click', (event) => {
+    event.target.closest('.spoiler').classList.toggle('spoiler--active')
+  })
+})
+
+
+// two sum section
+
 const sumArrayInput = document.querySelector('[data-sum-array]');
 const sumTargetInput = document.querySelector('[data-sum-target]');
 const sumButton = document.querySelector('[data-sum-btn]');
@@ -20,6 +32,8 @@ sumButton.addEventListener('click', () => {
 })
 
 
+// palindrome section
+
 const palindromeInput = document.querySelector('[data-palindrome-input]');
 const palindromeBtn = document.querySelector('[data-palindrome-btn]');
 
@@ -30,15 +44,7 @@ palindromeBtn.addEventListener('click', () => {
 });
 
 
-const romansInput = document.querySelector('[data-romans-input]');
-const romansBtn = document.querySelector('[data-romans-btn]');
-
-romansBtn.addEventListener('click', () => {
-
-  document.querySelector('[data-romans-result]').innerHTML = romanToInt(romansInput.value);
-
-});
-
+// integer to roman section
 
 const integerInput = document.querySelector('[data-integer-input]');
 const integerBtn = document.querySelector('[data-integer-btn]');
@@ -46,5 +52,17 @@ const integerBtn = document.querySelector('[data-integer-btn]');
 integerBtn.addEventListener('click', () => {
   
   document.querySelector('[data-integer-result]').innerHTML = intToRoman(integerInput.value);
+
+});
+
+
+// roman to integer section
+
+const romansInput = document.querySelector('[data-romans-input]');
+const romansBtn = document.querySelector('[data-romans-btn]');
+
+romansBtn.addEventListener('click', () => {
+
+  document.querySelector('[data-romans-result]').innerHTML = romanToInt(romansInput.value);
 
 });
